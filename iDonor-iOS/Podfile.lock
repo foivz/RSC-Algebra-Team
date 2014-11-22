@@ -1,0 +1,70 @@
+PODS:
+  - AFNetworking (2.5.0):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+    - AFNetworking/UIKit
+  - AFNetworking/NSURLConnection (2.5.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.0)
+  - AFNetworking/Security (2.5.0)
+  - AFNetworking/Serialization (2.5.0)
+  - AFNetworking/UIKit (2.5.0):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - CHTCollectionViewWaterfallLayout (0.8)
+  - Masonry (0.5.3)
+  - MBProgressHUD (0.9)
+  - MMDrawerController (0.5.7):
+    - MMDrawerController/Core
+    - MMDrawerController/MMDrawerBarButtonItem
+    - MMDrawerController/MMDrawerVisualStates
+    - MMDrawerController/Subclass
+  - MMDrawerController/Core (0.5.7)
+  - MMDrawerController/MMDrawerBarButtonItem (0.5.7):
+    - MMDrawerController/Core
+  - MMDrawerController/MMDrawerVisualStates (0.5.7):
+    - MMDrawerController/Core
+  - MMDrawerController/Subclass (0.5.7):
+    - MMDrawerController/Core
+  - ReactiveCocoa (2.3.1):
+    - ReactiveCocoa/UI
+  - ReactiveCocoa/Core (2.3.1):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.3.1)
+  - ReactiveCocoa/UI (2.3.1):
+    - ReactiveCocoa/Core
+  - SDWebImage (3.7.1):
+    - SDWebImage/Core
+  - SDWebImage/Core (3.7.1)
+  - SWTableViewCell (0.3.6)
+
+DEPENDENCIES:
+  - AFNetworking (~> 2.4)
+  - CHTCollectionViewWaterfallLayout
+  - Masonry (~> 0.5)
+  - MBProgressHUD (~> 0.9)
+  - MMDrawerController (~> 0.5)
+  - ReactiveCocoa (~> 2.3)
+  - SDWebImage (~> 3.7)
+  - SWTableViewCell (~> 0.3)
+
+SPEC CHECKSUMS:
+  AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
+  CHTCollectionViewWaterfallLayout: 14b7950cbe45ae9297e7759148d69b022bac047d
+  Masonry: 35368c2ca9577ca87722c12fc52c4bad9b1c1516
+  MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
+  MMDrawerController: c3ab7a318ddc7e2bcd133139c3161af08c6e1197
+  ReactiveCocoa: dca75777b9d18990c8714a3a6f2149f29b4d1462
+  SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
+  SWTableViewCell: f5cbe30c49c4e5b97231c076f17331caaf3f6244
+
+COCOAPODS: 0.34.2
