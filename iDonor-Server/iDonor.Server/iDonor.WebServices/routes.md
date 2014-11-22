@@ -176,6 +176,3 @@ response:
 message: (string),
 status: (100-500)
 
-
-- Gets mobile static data (countries, states, sports, positions): 					/api/data/static	
-- Gets all training days for a week id [wid]:                                       /api/days/allbyweekid?wid=(int)
