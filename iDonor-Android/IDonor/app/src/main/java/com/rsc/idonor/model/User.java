@@ -1,6 +1,9 @@
 package com.rsc.idonor.model;
 
+import com.facebook.model.GraphUser;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
 
 /**
  * Created by darkosmoljo on 22/11/14.
@@ -25,16 +28,19 @@ public class User {
     @SerializedName("lastName")
     private String lastName;
 
-    @SerializedName("DOB")
-    private String dob;
+    @SerializedName("sex")
+    private String sex;
 
-    @SerializedName("weight")
+    @SerializedName("DOBs")
+    private String DOBs;
+
+    @SerializedName("weightKg")
     private float weight;
 
-    @SerializedName("bloodType")
+    @SerializedName("bloodTypeId")
     private int bloodType;
 
-    @SerializedName("town")
+    @SerializedName("city")
     private String town;
 
     @SerializedName("address")
@@ -45,6 +51,23 @@ public class User {
 
     @SerializedName("postal")
     private String postal;
+
+    @SerializedName("timeSinceLastDonationSec")
+    private int timeSinceLastDonationSec;
+
+    @SerializedName("bloodDonations")
+    List<BloodDonations> bloodDonations;
+
+    public User() {
+
+    }
+
+    public User(GraphUser user) {
+        this.setUsername(String.valueOf(user.getId()));
+        this.setFirstName(user.getFirstName());
+        this.setLastName(user.getLastName());
+
+    }
 
     public int getUserId() {
         return userId;
@@ -90,16 +113,24 @@ public class User {
         return lastName;
     }
 
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    public String getDob() {
-        return dob;
+    public String getDOBs() {
+        return DOBs;
     }
 
-    public void setDob(String dob) {
-        this.dob = dob;
+    public void setDOBs(String DOBs) {
+        this.DOBs = DOBs;
     }
 
     public float getWeight() {
@@ -148,5 +179,21 @@ public class User {
 
     public void setPostal(String postal) {
         this.postal = postal;
+    }
+
+    public int getTimeSinceLastDonationSec() {
+        return timeSinceLastDonationSec;
+    }
+
+    public void setTimeSinceLastDonationSec(int timeSinceLastDonationSec) {
+        this.timeSinceLastDonationSec = timeSinceLastDonationSec;
+    }
+
+    public List<BloodDonations> getBloodDonations() {
+        return bloodDonations;
+    }
+
+    public void setBloodDonations(List<BloodDonations> bloodDonations) {
+        this.bloodDonations = bloodDonations;
     }
 }

@@ -1,10 +1,13 @@
 package com.rsc.idonor.listeners;
 
 import android.app.ActionBar;
+import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 
+import com.rsc.idonor.baseclasses.Base;
 import com.rsc.idonor.baseclasses.BaseFragment;
+import com.rsc.idonor.baseclasses.BaseTitle;
 
 /**
  * Created by darkosmoljo on 22/11/14.
@@ -25,9 +28,9 @@ public class TabListener implements ActionBar.TabListener {
     public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
         mViewPager.setCurrentItem(tab.getPosition());
 
-        BaseFragment fragment = (BaseFragment) mPagerAdapter.getItem(tab.getPosition());
+        BaseTitle fragment = (BaseTitle) mPagerAdapter.getItem(tab.getPosition());
 
-        mActionBar.setTitle(fragment.getTitle());
+        mActionBar.setTitle(fragment.getScreenTitle());
     }
 
     @Override
@@ -37,7 +40,7 @@ public class TabListener implements ActionBar.TabListener {
 
     @Override
     public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
-        BaseFragment fragment = (BaseFragment) mPagerAdapter.getItem(tab.getPosition());
+        Base fragment = (Base) mPagerAdapter.getItem(tab.getPosition());
         fragment.update();
     }
 }

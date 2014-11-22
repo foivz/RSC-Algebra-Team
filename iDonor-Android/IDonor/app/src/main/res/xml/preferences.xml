@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Personal">
+
+        <PreferenceScreen
+            android:title="@string/preferences_logout"
+            android:key="logout"
+            android:icon="@drawable/logout_icon">
+        </PreferenceScreen>
+
+
+        <CheckBoxPreference
+            android:key="push_notifications"
+            android:title="@string/preferences_receive_push"
+            android:summary="@string/preference_notifications_summary" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

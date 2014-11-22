@@ -5,11 +5,10 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.support.v13.app.FragmentPagerAdapter;
 
-import com.rsc.idonor.baseclasses.BaseFragment;
-import com.rsc.idonor.fragments.FragmentTab1;
-import com.rsc.idonor.fragments.FragmentTab2;
-import com.rsc.idonor.fragments.FragmentTab3;
-import com.rsc.idonor.fragments.FragmentTab4;
+import com.rsc.idonor.fragments.FragmentEvents;
+import com.rsc.idonor.fragments.FragmentMap;
+import com.rsc.idonor.fragments.FragmentSettings;
+import com.rsc.idonor.fragments.FragmentUserProfile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,21 +18,21 @@ import java.util.List;
  */
 public class PagerAdapter extends FragmentPagerAdapter {
 
-    List<BaseFragment> dataSource;
+    List<Fragment> dataSource;
 
     public PagerAdapter(FragmentManager fm) {
         super(fm);
 
-        dataSource = new ArrayList<BaseFragment>();
+        dataSource = new ArrayList<Fragment>();
 
-        dataSource.add(FragmentTab1.newFragment());
-        dataSource.add(FragmentTab2.newFragment());
-        dataSource.add(FragmentTab3.newFragment());
-        dataSource.add(FragmentTab4.newFragment());
+        dataSource.add(FragmentUserProfile.newFragment());
+        dataSource.add(FragmentMap.newFragment());
+        dataSource.add(FragmentEvents.newFragment());
+        dataSource.add(FragmentSettings.newFragment());
     }
 
     @Override
-    public BaseFragment getItem(int i) {
+    public Fragment getItem(int i) {
         return dataSource.get(i);
     }
 

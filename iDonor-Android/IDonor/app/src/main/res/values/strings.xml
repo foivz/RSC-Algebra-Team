@@ -4,5 +4,35 @@
     <string name="app_name">iDonor</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="login_username">username</string>
+    <string name="login_password">password</string>
+    <string name="login_login">Login</string>
+    <string name="login_register">Register</string>
 
+    <string name="app_id">748258061922692</string>
+    <string name="exception">Exception: %1$s</string>
+    <string name="cancelled">Cancelled</string>
+    <string name="permission_not_granted">Unable to perform selected action because permissions were not granted.</string>
+    <string name="ok">OK</string>
+    <string name="hello_user">Hello %1$s!</string>
+    <string name="success">Success</string>
+    <string name="successfully_posted_post">Successfully posted \'%1$s\'.\nPost ID: %2$s</string>
+    <string name="error">Error</string>
+    <string name="status_update">Updating status for %1$s at %2$s</string>
+    <string name="photo_post">Photo Post</string>
+    <string name="you_picked">You picked:</string>
+    <string name="no_friends_selected">&lt;No friends selected&gt;</string>
+    <string name="no_place_selected">&lt;No place selected&gt;</string>
+    <string name="pick_seattle_place">Pick a Seattle Place</string>
+    <string name="preferences_receive_push">Receive Push</string>
+    <string name="preferences_logout">Logout</string>
+    <string name="preference_notifications_summary">If you wish to receive notifications about new events enable here!</string>
+    <string name="fragment_title_settings">Settings</string>
+    <string name="fragment_title_events">Events</string>
+    <string name="fragment_title_map">Map</string>
+    <string name="fragment_title_home">Home</string>
+    <string name="register_email">email</string>
+    <string name="register_name">First Name</string>
+    <string name="register_last_name">Last name</string>
+    <string name="register_gender">Gender</string>
 </resources>

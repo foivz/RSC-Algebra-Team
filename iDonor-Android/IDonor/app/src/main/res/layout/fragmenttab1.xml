@@ -4,8 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.rsc.idonor.fragments.FragmentTab1">
+    tools:context="com.rsc.idonor.fragments.FragmentUserProfile">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
 
+
+    </RelativeLayout>
 
 </RelativeLayout>

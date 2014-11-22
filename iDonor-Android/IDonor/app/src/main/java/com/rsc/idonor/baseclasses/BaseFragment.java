@@ -8,7 +8,6 @@ import android.app.Fragment;
 public abstract class BaseFragment extends Fragment implements Base {
 
 
-    public abstract String getTitle();
     protected abstract void initUI();
 
     @Override
