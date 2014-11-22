@@ -1,0 +1,14 @@
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Entities\bin\Debug\iDonor.Entities.dll.config
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Entities\bin\Debug\iDonor.Entities.dll
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Entities\bin\Debug\iDonor.Entities.pdb
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Entities\bin\Debug\EntityFramework.dll
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Entities\bin\Debug\iDonor.Utility.dll
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Entities\bin\Debug\iDonor.Utility.pdb
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Entities\bin\Debug\EntityFramework.xml
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Entities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Entities\obj\Debug\iDonor.Entities.csprojResolveAssemblyReference.cache
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Entities\obj\Debug\iDonor.Entities.dll
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Entities\obj\Debug\iDonor.Entities.pdb
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Entities\bin\Debug\System.Web.Mvc.dll
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Entities\bin\Debug\System.Web.Mvc.xml

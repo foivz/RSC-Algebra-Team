@@ -1,0 +1,5 @@
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Database\bin\Debug\iDonor.Database.dacpac
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Database\bin\Debug\iDonor.Database.dll
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Database\bin\Debug\iDonor.Database.pdb
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Database\obj\Debug\iDonor.Database.dll
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Database\obj\Debug\iDonor.Database.pdb
