@@ -199,6 +199,16 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iDonor.BusinessLogicLayer\iDonor.BusinessLogicLayer.csproj">
+      <Project>{614de039-f7d3-424b-b1d7-cfe8ad2cb1ee}</Project>
+      <Name>iDonor.BusinessLogicLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iDonor.Utility\iDonor.Utility.csproj">
+      <Project>{08e01ab5-9f8a-4430-8333-ee29107d69a6}</Project>
+      <Name>iDonor.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
