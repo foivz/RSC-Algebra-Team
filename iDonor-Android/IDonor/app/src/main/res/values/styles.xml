@@ -1,0 +1,25 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <item name="android:actionBarStyle" >@style/AppTheme.ActionBarStyle</item>
+    </style>
+
+    <style name="AppTheme.ActionBarStyle"
+        parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@color/Crimson</item>
+        <item name="android:titleTextStyle">@style/AppTheme.ActionBarStyle.TitleTextStyle</item>
+        <item name="android:subtitleTextStyle">@style/AppTheme.ActionBarStyle.SubTitleTextStyle</item>
+    </style>
+
+    <style name="AppTheme.ActionBarStyle.TitleTextStyle">
+        <item name="android:textColor">@color/White</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="AppTheme.ActionBarStyle.SubTitleTextStyle">
+        <item name="android:textColor">@color/White</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+</resources>
