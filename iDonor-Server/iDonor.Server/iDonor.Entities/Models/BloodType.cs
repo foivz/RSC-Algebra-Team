@@ -14,11 +14,11 @@ namespace iDonor.Entities.Models
             this.Donations = new List<Donation>();
         }
 
- 
-        [Column("ID")] 
+
+        [Column("ID")]
         public int ID { get; set; }
- 
-        [Column("Name")] 
+
+        [Column("Name")]
         public string Name { get; set; }
         public virtual ICollection<BloodStorage> BloodStorages { get; set; }
         public virtual ICollection<Donation> Donations { get; set; }

@@ -8,17 +8,17 @@ namespace iDonor.Entities.Models
     [Table("BloodLevelRule")]
     public partial class BloodLevelRule : IBaseEntity
     {
- 
-        [Column("ID")] 
+
+        [Column("ID")]
         public int ID { get; set; }
- 
-        [Column("BloodLevel")] 
+
+        [Column("BloodLevel")]
         public int BloodLevel { get; set; }
- 
-        [Column("ToQuantity")] 
+
+        [Column("ToQuantity")]
         public int ToQuantity { get; set; }
- 
-        [Column("BloodStorageID")] 
+
+        [Column("BloodStorageID")]
         public int BloodStorageID { get; set; }
         public virtual BloodStorage BloodStorage { get; set; }
     }

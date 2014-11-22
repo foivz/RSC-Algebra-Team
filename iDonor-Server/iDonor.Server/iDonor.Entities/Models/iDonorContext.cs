@@ -4,7 +4,7 @@ using iDonor.Entities.Models.Mapping;
 
 namespace iDonor.Entities.Models
 {
-    public partial class iDonorContext : DbContext
+    public partial class iDonorContext : DbContext, IDbContext
     {
         static iDonorContext()
         {

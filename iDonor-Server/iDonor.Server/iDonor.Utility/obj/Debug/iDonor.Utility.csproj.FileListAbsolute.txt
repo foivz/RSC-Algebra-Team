@@ -1,0 +1,10 @@
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Utility\bin\Debug\iDonor.Utility.dll.config
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Utility\bin\Debug\iDonor.Utility.dll
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Utility\bin\Debug\iDonor.Utility.pdb
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Utility\bin\Debug\EntityFramework.dll
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Utility\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Utility\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Utility\bin\Debug\EntityFramework.xml
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Utility\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Utility\obj\Debug\iDonor.Utility.dll
+C:\Users\Vedran\Source\Repos\iDonor\RSC-Algebra-Team\iDonor-Server\iDonor.Server\iDonor.Utility\obj\Debug\iDonor.Utility.pdb

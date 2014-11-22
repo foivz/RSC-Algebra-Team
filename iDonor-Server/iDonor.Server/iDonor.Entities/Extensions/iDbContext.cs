@@ -2,9 +2,9 @@
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 
-namespace iDonor.Entities.Extensions
+namespace iDonor.Entities
 {
-    public interface iDbContext
+    public interface IDbContext
     {
         bool ProxyCreation { get; set; }
 

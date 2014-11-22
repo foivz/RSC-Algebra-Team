@@ -10,7 +10,7 @@ namespace iDonor.Entities.Models
     /// <summary>
     /// Partial extensions to the DataBase context, provides extra flexibility and dependency decoupling
     /// </summary>
-    public partial class iDonorContext : DbContext
+    public partial class iDonorContext : DbContext, IDbContext
     {
         /// <summary>
         /// A wrapper over the DbSet to get a generic access over an Entity Class Type.
