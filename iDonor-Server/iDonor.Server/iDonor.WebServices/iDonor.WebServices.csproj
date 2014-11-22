@@ -103,6 +103,12 @@
     <Folder Include="RequestViewModels\" />
     <Folder Include="ResponseViewModels\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iDonor.Utility\iDonor.Utility.csproj">
+      <Project>{08e01ab5-9f8a-4430-8333-ee29107d69a6}</Project>
+      <Name>iDonor.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

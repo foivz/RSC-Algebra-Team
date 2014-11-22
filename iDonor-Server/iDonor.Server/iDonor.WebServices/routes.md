@@ -9,6 +9,9 @@ ROUTE AND PARAMETERS										DESCRIPTION
 /api/user/login?username=(string)&password=(string)
 ->{LoginAppUserResponseModel}
 
+/api/user/resetPassword?userName=(string)
+->{SaveResponseModel} //salje se na mail password
+
 #POST
 /api/user/register?{RegisterAppUserRequestModel}
 ->{RegisterAppUserResponseModel}
@@ -16,8 +19,8 @@ ROUTE AND PARAMETERS										DESCRIPTION
 - INSTITUTION
 -----------
 #GET
-/api/institution/
-->
+/api/institution/getInstitutionById?institutionId=(int)
+->{InstitutionResponseModel}
 
 #POST
 
@@ -27,8 +30,18 @@ ROUTE AND PARAMETERS										DESCRIPTION
 /api/statistics/getForUserId?userId=(int)
 ->{StatisticsForUserResponseModel}
 
+/api/statistics/getGlobalStatistics
+->{GlobalStatisticsResponseModels}
+
 #POST
 
+
+- EVENTS
+-----------
+
+#GET
+/api/user/register?{RegisterAppUserRequestModel}
+#POST
 
 - PUSH NOTIFICATIONS
 -----------
@@ -96,10 +109,11 @@ response:
 	email:(string),
 	firstName:(string),
 	lastName:(string),
+    sex:(string),//mf
 	age:(int),
 	weight(decimal),
 	bloodTypeId:(int),
-	town:(string?) //poslije može townID,
+	city:(string?) //poslije može townID,
 	address:(string?),
 	phoneNumber:(string?),
 	postalNumber:(string?),
@@ -118,15 +132,49 @@ status: (100-500)
 {StatisticsForUserResponseModel}
 response:
 {
-	...
+	bloodDonationCount:(int),
+    litresOfDonatedBlood:(int),
+    bloodDonations: [ // sorted by date - ivan
+		{ 
+			year:(string),
+            numberOfDonations:(int)
+		} ...]
+
 },
 message: (string),
 status: (100-500)
 
+{GlobalStatisticsResponseModels}
+response:
+{
+	bloodDonationsCount:(int),
+    litresOfDonatedBlood:(int),
+    donatorCount:(int),
+    femaleDonatorsCount:(int),
+    maleDonatorsCount:(int),
+    numberOfLivesSaved:(int),
+    averageAge:(float)
+},
+message: (string),
+status: (100-500)
 
-
-
-
+{InstitutionResponseModel}
+response:
+{
+    name:(string),
+    city:(string),
+    adress:(int),
+    postalNumber(int),
+    phoneNumber:(string),
+    bloodLevels: [ 
+		{ 
+			bloodType:(string),
+            level:(int)
+		} ...]
+     
+},
+message: (string),
+status: (100-500)
 
 
 - Gets mobile static data (countries, states, sports, positions): 					/api/data/static	

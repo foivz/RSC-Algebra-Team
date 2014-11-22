@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -46,6 +47,24 @@
     <Folder Include="Services\Implementations\" />
     <Folder Include="Services\Interfaces\" />
     <Folder Include="ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iDonor.DataAccessLayer\iDonor.DataAccessLayer.csproj">
+      <Project>{e89d88ba-66ba-4951-b450-4de30bf7cb14}</Project>
+      <Name>iDonor.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iDonor.Entities\iDonor.Entities.csproj">
+      <Project>{234fcb30-bf2d-4e42-be1d-e7d61e296385}</Project>
+      <Name>iDonor.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iDonor.PushSharpProcessor\iDonor.PushSharpProcessor.csproj">
+      <Project>{88bd32c7-aaac-430b-bced-8a772b467859}</Project>
+      <Name>iDonor.PushSharpProcessor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iDonor.Utility\iDonor.Utility.csproj">
+      <Project>{08e01ab5-9f8a-4430-8333-ee29107d69a6}</Project>
+      <Name>iDonor.Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

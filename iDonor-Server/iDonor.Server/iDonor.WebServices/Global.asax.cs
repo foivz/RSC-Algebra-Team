@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Http;
 using System.Web.Routing;
+using iDonor.Utility;
 
 namespace iDonor.WebServices
 {
@@ -13,5 +14,11 @@ namespace iDonor.WebServices
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
         }
+        //protected void Application_Error(object sender, EventArgs e)
+        //{
+        //    Exception ex = Server.GetLastError();
+        //    Server.ClearError();
+        //    ErrorLogger.GlobalLog(ex, Request);
+        //}
     }
 }
