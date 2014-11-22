@@ -30,6 +30,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iDonor.Entities", "iDonor.E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iDonor.PushSharpProcessor", "iDonor.PushSharpProcessor\iDonor.PushSharpProcessor.csproj", "{88BD32C7-AAAC-430B-BCED-8A772B467859}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "iDonor.Database", "iDonor.Database\iDonor.Database.sqlproj", "{680DC922-957C-4B2B-AB99-8A9C80631C1F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +66,12 @@ Global
 		{88BD32C7-AAAC-430B-BCED-8A772B467859}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88BD32C7-AAAC-430B-BCED-8A772B467859}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88BD32C7-AAAC-430B-BCED-8A772B467859}.Release|Any CPU.Build.0 = Release|Any CPU
+		{680DC922-957C-4B2B-AB99-8A9C80631C1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{680DC922-957C-4B2B-AB99-8A9C80631C1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{680DC922-957C-4B2B-AB99-8A9C80631C1F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{680DC922-957C-4B2B-AB99-8A9C80631C1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{680DC922-957C-4B2B-AB99-8A9C80631C1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{680DC922-957C-4B2B-AB99-8A9C80631C1F}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,5 +84,6 @@ Global
 		{80E07DAE-05CE-4EF9-86B1-639E34B12E24} = {52EA1207-E6A0-448B-A502-8330C3E6C3A4}
 		{234FCB30-BF2D-4E42-BE1D-E7D61E296385} = {2327E6EE-B138-4062-89FA-7E9448011FBF}
 		{88BD32C7-AAAC-430B-BCED-8A772B467859} = {41F4B88C-5172-4B16-B929-A9DEF02FCA66}
+		{680DC922-957C-4B2B-AB99-8A9C80631C1F} = {2327E6EE-B138-4062-89FA-7E9448011FBF}
 	EndGlobalSection
 EndGlobal
