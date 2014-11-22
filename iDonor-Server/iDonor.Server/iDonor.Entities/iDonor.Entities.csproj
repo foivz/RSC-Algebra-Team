@@ -30,7 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.2-beta2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.2-beta2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -39,7 +46,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\iDbContext.cs" />
+    <Compile Include="Extensions\iDonorContextPartial.cs" />
+    <Compile Include="Models\Base\IBaseEntity.cs" />
+    <Compile Include="Models\BloodLevelRule.cs" />
+    <Compile Include="Models\BloodStorage.cs" />
+    <Compile Include="Models\BloodType.cs" />
+    <Compile Include="Models\Donation.cs" />
+    <Compile Include="Models\DonationType.cs" />
+    <Compile Include="Models\iDonorContext.cs" />
+    <Compile Include="Models\Institution.cs" />
+    <Compile Include="Models\Mapping\BloodLevelRuleMap.cs" />
+    <Compile Include="Models\Mapping\BloodStorageMap.cs" />
+    <Compile Include="Models\Mapping\BloodTypeMap.cs" />
+    <Compile Include="Models\Mapping\DonationMap.cs" />
+    <Compile Include="Models\Mapping\DonationTypeMap.cs" />
+    <Compile Include="Models\Mapping\InstitutionMap.cs" />
+    <Compile Include="Models\Mapping\MobileDeviceMap.cs" />
+    <Compile Include="Models\Mapping\PushNotificationMap.cs" />
+    <Compile Include="Models\Mapping\RoleMap.cs" />
+    <Compile Include="Models\Mapping\UserMap.cs" />
+    <Compile Include="Models\MobileDevice.cs" />
+    <Compile Include="Models\PushNotification.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="CodeTemplates\ReverseEngineerCodeFirst\Context.tt" />
+    <None Include="CodeTemplates\ReverseEngineerCodeFirst\Entity.tt" />
+    <None Include="CodeTemplates\ReverseEngineerCodeFirst\Mapping.tt" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
