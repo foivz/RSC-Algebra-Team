@@ -1,12 +1,11 @@
-package com.rsc.idonor.listeners;
+package com.rsc.idonor.adapters;
 
 import android.app.ActionBar;
-import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 
+import com.rsc.idonor.adapters.PagerAdapter;
 import com.rsc.idonor.baseclasses.Base;
-import com.rsc.idonor.baseclasses.BaseFragment;
 import com.rsc.idonor.baseclasses.BaseTitle;
 
 /**

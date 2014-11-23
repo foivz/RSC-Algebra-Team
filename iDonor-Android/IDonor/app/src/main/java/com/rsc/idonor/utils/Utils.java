@@ -5,6 +5,12 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 /**
  * Created by darkosmoljo on 22/11/14.
  */
@@ -20,6 +26,38 @@ public class Utils {
                 .setPositiveButton(positiveButtonTitle, clickListener)
                 .setNegativeButton(negativeButtonTitle, clickListener)
                 .show();
+    }
+
+    public static String convertStreamToString(InputStream is) throws IOException {
+        if (is != null) {
+            StringBuilder sb = new StringBuilder();
+            String line;
+
+            try {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+                while ((line = reader.readLine()) != null) {
+                    sb.append(line);
+                }
+            } finally {
+                is.close();
+            }
+            return sb.toString();
+        } else {
+            return "";
+        }
+    }
+
+    private static final String urlPrefix = "http://10.0.21.9/idonors/";
+
+    public static String returnUrlWithParams(String methodName, String... params) {
+
+        if (params != null && params.length > 0) {
+            for (String str : params) {
+                methodName = methodName.concat(str + File.separator);
+            }
+        }
+
+        return urlPrefix.concat(methodName);
     }
 
 }

@@ -2,24 +2,14 @@ package com.rsc.idonor.activities;
 
 import android.app.ActionBar;
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 
 import com.facebook.AppEventsLogger;
-import com.facebook.FacebookAuthorizationException;
-import com.facebook.FacebookOperationCanceledException;
-import com.facebook.FacebookRequestError;
-import com.facebook.Session;
-import com.facebook.SessionState;
 import com.facebook.UiLifecycleHelper;
-import com.facebook.model.GraphObject;
 import com.facebook.model.GraphUser;
 import com.facebook.widget.FacebookDialog;
 import com.facebook.widget.LoginButton;
@@ -27,11 +17,9 @@ import com.rsc.idonor.MainActivity;
 import com.rsc.idonor.R;
 import com.rsc.idonor.baseclasses.BaseActionBarActivity;
 import com.rsc.idonor.gamefication.FacebookManager;
-import com.rsc.idonor.listeners.PagerAdapter;
-import com.rsc.idonor.listeners.TabListener;
 import com.rsc.idonor.model.User;
-import com.rsc.idonor.utils.FontFace;
 import com.rsc.idonor.utils.Preferences;
+import com.rsc.idonor.views.TextViewBoldItalic;
 
 
 public class LoginActivity extends BaseActionBarActivity implements View.OnClickListener {
@@ -55,10 +43,9 @@ public class LoginActivity extends BaseActionBarActivity implements View.OnClick
         return "Login";
     }
 
-    Button mLoginButton;
+    TextViewBoldItalic mLoginButton;
     LoginButton mLoginFacebookButton;
-    Button mLoginTwitterButton;
-    Button mRegisterButton;
+    TextViewBoldItalic mRegisterButton;
 
     @Override
     protected void initUI() {
@@ -66,7 +53,7 @@ public class LoginActivity extends BaseActionBarActivity implements View.OnClick
 
         if (actionBar != null) {
 
-            mLoginButton = (Button) findViewById(R.id.btnLogin);
+            mLoginButton = (TextViewBoldItalic) findViewById(R.id.btnLogin);
             mLoginButton.setOnClickListener(this);
             mLoginFacebookButton = (LoginButton) findViewById(R.id.btnLoginWithFacebook);
             mLoginFacebookButton.setUserInfoChangedCallback(new LoginButton.UserInfoChangedCallback() {
@@ -82,9 +69,7 @@ public class LoginActivity extends BaseActionBarActivity implements View.OnClick
                     }
                 }
             });
-            mLoginTwitterButton = (Button) findViewById(R.id.btnLogin);
-            mLoginTwitterButton.setOnClickListener(this);
-            mRegisterButton = (Button) findViewById(R.id.btnLogin);
+            mRegisterButton = (TextViewBoldItalic) findViewById(R.id.btnGoRegister);
             mRegisterButton.setOnClickListener(this);
 
             actionBar.setTitle(getScreenTitle());
@@ -148,9 +133,7 @@ public class LoginActivity extends BaseActionBarActivity implements View.OnClick
 
     @Override
     public void onClick(View view) {
-        if (view instanceof LoginButton) {
-
-        } else if (view instanceof Button) {
+        if (view instanceof TextViewBoldItalic) {
             if(view == mLoginButton) {
                 new LoginLogic().login(new LoginCallback() {
                     @Override
@@ -158,13 +141,8 @@ public class LoginActivity extends BaseActionBarActivity implements View.OnClick
 
                     }
                 });
-            } else if (view == mLoginTwitterButton) {
-                new LoginLogic().loginTwitter(new LoginCallback() {
-                    @Override
-                    public void onLoginFinished() {
-
-                    }
-                });
+            } else if (view == mRegisterButton) {
+                RegisterActivity.showActivity(this, true);
             }
         }
     }
@@ -188,9 +166,6 @@ public class LoginActivity extends BaseActionBarActivity implements View.OnClick
     }
 
     private class LoginLogic {
-
-        public LoginLogic() {
-        }
 
         public void login(LoginCallback callback) {
 

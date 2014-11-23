@@ -3,8 +3,6 @@ package com.rsc.idonor.baseclasses;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.rsc.idonor.interfaces.Observer;
-
 /**
  * Created by darkosmoljo on 22/11/14.
  */

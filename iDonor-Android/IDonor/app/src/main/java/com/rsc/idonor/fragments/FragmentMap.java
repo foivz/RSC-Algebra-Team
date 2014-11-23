@@ -25,7 +25,7 @@ public class FragmentMap extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragmenttab1, container, false);
+        View rootView = inflater.inflate(R.layout.fragmenttab2, container, false);
 
         return rootView != null ? rootView : super.onCreateView(inflater, container, savedInstanceState);
     }
@@ -37,6 +37,6 @@ public class FragmentMap extends BaseFragment {
 
     @Override
     public String getScreenTitle() {
-        return getActivity().getString(R.string.fragment_title_map);
+        return "Map";
     }
 }

@@ -31,8 +31,8 @@ public class User {
     @SerializedName("sex")
     private String sex;
 
-    @SerializedName("DOBs")
-    private String DOBs;
+    @SerializedName("age")
+    private int age;
 
     @SerializedName("weightKg")
     private float weight;
@@ -125,12 +125,12 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getDOBs() {
-        return DOBs;
+    public int getAge() {
+        return age;
     }
 
-    public void setDOBs(String DOBs) {
-        this.DOBs = DOBs;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public float getWeight() {

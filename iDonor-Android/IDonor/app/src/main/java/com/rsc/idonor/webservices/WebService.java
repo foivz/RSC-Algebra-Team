@@ -10,12 +10,9 @@ import java.util.List;
  */
 public interface WebService {
 
-    public User getUser(String username, String password);
-    public User getFacebookUser();
-    public User getTwitterUser();
+    public void getUser(String username, String password, WebServiceResponse callback);
 
-    public boolean postRegisterUser(User user);
+    public void postRegisterUser(User user, WebServiceResponse callback);
 
-    public List<Institution> getAllInstitutions();
 
 }

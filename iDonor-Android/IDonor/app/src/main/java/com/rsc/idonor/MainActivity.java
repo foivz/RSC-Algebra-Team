@@ -7,13 +7,10 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 
 import com.rsc.idonor.activities.LoginActivity;
-import com.rsc.idonor.baseclasses.Base;
 import com.rsc.idonor.baseclasses.BaseActionBarActivity;
-import com.rsc.idonor.baseclasses.BaseFragment;
-import com.rsc.idonor.baseclasses.BasePreferenceFragment;
 import com.rsc.idonor.baseclasses.BaseTitle;
-import com.rsc.idonor.listeners.PagerAdapter;
-import com.rsc.idonor.listeners.TabListener;
+import com.rsc.idonor.adapters.PagerAdapter;
+import com.rsc.idonor.adapters.TabListener;
 import com.rsc.idonor.model.User;
 import com.rsc.idonor.utils.FontFace;
 import com.rsc.idonor.utils.Preferences;
@@ -62,6 +59,8 @@ public class MainActivity extends BaseActionBarActivity {
                     actionBar.setSelectedNavigationItem(position);
                 }
             });
+
+            actionBar.removeAllTabs();
 
             for (int i = 0; i < mPagerAdapter.getCount(); i++) {
 

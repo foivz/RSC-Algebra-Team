@@ -5,34 +5,30 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
 
-import com.facebook.AppEventsLogger;
-import com.facebook.UiLifecycleHelper;
-import com.facebook.model.GraphUser;
-import com.facebook.widget.FacebookDialog;
-import com.facebook.widget.LoginButton;
-import com.rsc.idonor.MainActivity;
+import com.facebook.android.Util;
 import com.rsc.idonor.R;
+import com.rsc.idonor.adapters.SpinnerBloodTypeAdapter;
 import com.rsc.idonor.baseclasses.BaseActionBarActivity;
-import com.rsc.idonor.gamefication.FacebookManager;
+import com.rsc.idonor.model.BloodType;
 import com.rsc.idonor.model.User;
 import com.rsc.idonor.utils.Preferences;
+import com.rsc.idonor.utils.Utils;
+import com.rsc.idonor.views.TextViewBold;
 
 
 public class RegisterActivity extends BaseActionBarActivity implements View.OnClickListener {
 
     // SPoC for showing Activity
-    public static boolean showActivity(Context context) {
+    public static boolean showActivity(Context context, boolean isRegister) {
         if (context == null)
             return false;
 
-        if (context instanceof Activity)
-            ((Activity)context).finish();
-
         Intent intent = new Intent(context, RegisterActivity.class);
+        intent.putExtra("isRegister", isRegister);
         context.startActivity(intent);
 
         return true;
@@ -40,156 +36,123 @@ public class RegisterActivity extends BaseActionBarActivity implements View.OnCl
 
     @Override
     public String getScreenTitle() {
-        return "Login";
+        return "Register";
     }
 
-    Button mLoginButton;
-    LoginButton mLoginFacebookButton;
-    Button mLoginTwitterButton;
-    Button mRegisterButton;
+    private EditText etEmail;
+    private EditText etFirstName;
+    private EditText etLastName;
+    private EditText etPassword;
+    private EditText etPasswordConfirm;
+    private EditText etAge;
+    private Spinner spinnerBloodType;
+
+    private TextViewBold btnRegister;
 
     @Override
     protected void initUI() {
         final ActionBar actionBar = getActionBar();
 
+        boolean isRegister = getIntent().getBooleanExtra("isRegister", false);
+
         if (actionBar != null) {
+            String title =  isRegister? "Register" : "Edit";
+            actionBar.setTitle(title);
+            btnRegister.setText(title);
 
-            mLoginButton = (Button) findViewById(R.id.btnLogin);
-            mLoginButton.setOnClickListener(this);
-            mLoginFacebookButton = (LoginButton) findViewById(R.id.btnLoginWithFacebook);
-            mLoginFacebookButton.setUserInfoChangedCallback(new LoginButton.UserInfoChangedCallback() {
-                @Override
-                public void onUserInfoFetched(GraphUser user) {
-                    if (user != null) {
-                        Log.e("TAG", user.getId());
+            User user = Preferences.getUser(this);
 
-                        User realUser = new User(user);
+            if (user != null) {
+                BloodType userBloodType = null;
 
-                        Preferences.saveUser(RegisterActivity.this, realUser);
-                        MainActivity.showActivity(RegisterActivity.this, true);
+                for (BloodType type : BloodType.getBloodTypes()) {
+                    if (type.getBloodType() == user.getBloodType()) {
+                        userBloodType = type;
+                        break;
                     }
                 }
-            });
-            mLoginTwitterButton = (Button) findViewById(R.id.btnLogin);
-            mLoginTwitterButton.setOnClickListener(this);
-            mRegisterButton = (Button) findViewById(R.id.btnLogin);
-            mRegisterButton.setOnClickListener(this);
 
-            actionBar.setTitle(getScreenTitle());
+                if (userBloodType != null)
+                    spinnerBloodType.setSelection(BloodType.getBloodTypes().indexOf(userBloodType));
+
+                etFirstName.setText(user.getFirstName());
+                etLastName.setText(user.getLastName());
+                etEmail.setText(user.getEmail());
+                etAge.setText(String.valueOf(user.getAge()));
+            }
+
         }
 
     }
-
-    private FacebookManager mFacebookManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mFacebookManager = FacebookManager.getInstance(this);
-        mFacebookManager.setUiHelper(new UiLifecycleHelper(this, mFacebookManager));
-        mFacebookManager.getUiHelper().onCreate(savedInstanceState);
+        setContentView(R.layout.activity_register);
 
-        if (savedInstanceState != null) {
-            String pendingAction = savedInstanceState.getString(FacebookManager.PENDING_ACTION_BUNDLE_KEY);
-            mFacebookManager.setPendingAction(pendingAction);
-        }
+        btnRegister = (TextViewBold) findViewById(R.id.btnRegister);
+        btnRegister.setOnClickListener(this);
 
-        setContentView(R.layout.activity_login);
+        spinnerBloodType = (Spinner) findViewById(R.id.spinnerBloodType);
+        SpinnerBloodTypeAdapter dataAdapter = new SpinnerBloodTypeAdapter(this, R.layout.custom_spinner_item, BloodType.getBloodTypes());
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerBloodType.setAdapter(dataAdapter);
+
+
+        etEmail = (EditText) findViewById(R.id.etRegisterEmail);
+        etFirstName = (EditText) findViewById(R.id.etFirstName);
+        etLastName = (EditText) findViewById(R.id.etLastName);
+        etPassword = (EditText) findViewById(R.id.etPassword);
+        etPasswordConfirm = (EditText) findViewById(R.id.etPasswordConfirm);
+        etAge = (EditText) findViewById(R.id.etAge);
+
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        mFacebookManager.getUiHelper().onPause();
-
-        // Call the 'deactivateApp' method to log an app event for use in analytics and advertising
-        // reporting.  Do so in the onPause methods of the primary Activities that an app may be launched into.
-        AppEventsLogger.deactivateApp(this);
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        mFacebookManager.getUiHelper().onDestroy();
-    }
-
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        mFacebookManager.getUiHelper().onSaveInstanceState(outState);
-
-        outState.putString(FacebookManager.PENDING_ACTION_BUNDLE_KEY, mFacebookManager.getPendingAction().name());
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        mFacebookManager.getUiHelper().onActivityResult(requestCode, resultCode, data, dialogCallback);
-    }
 
     @Override
     public void onClick(View view) {
-        if (view instanceof LoginButton) {
+        if (validation()) {
+            User user;
+            if (getIntent().getBooleanExtra("isRegister", true)) {
+                user = new User();
 
-        } else if (view instanceof Button) {
-            if(view == mLoginButton) {
-                new LoginLogic().login(new LoginCallback() {
-                    @Override
-                    public void onLoginFinished() {
+                user.setEmail(etEmail.getText().toString());
+                user.setLastName(etLastName.getText().toString());
+                user.setFirstName(etFirstName.getText().toString());
+                user.setAge(Integer.parseInt(etAge.getText().toString()));
+                user.setUsername(etEmail.getText().toString());
+                user.setBloodType(((BloodType)spinnerBloodType.getSelectedItem()).getBloodType());
+            } else {
+                user = Preferences.getUser(this);
 
-                    }
-                });
-            } else if (view == mLoginTwitterButton) {
-                new LoginLogic().loginTwitter(new LoginCallback() {
-                    @Override
-                    public void onLoginFinished() {
-
-                    }
-                });
+                user.setEmail(etEmail.getText().toString());
+                user.setLastName(etLastName.getText().toString());
+                user.setFirstName(etFirstName.getText().toString());
+                user.setAge(Integer.parseInt(etAge.getText().toString()));
+                user.setUsername(etEmail.getText().toString());
+                user.setBloodType(((BloodType)spinnerBloodType.getSelectedItem()).getBloodType());
             }
+
         }
     }
 
-    private FacebookDialog.Callback dialogCallback = new FacebookDialog.Callback() {
-        @Override
-        public void onError(FacebookDialog.PendingCall pendingCall, Exception error, Bundle data) {
-            Log.d("HelloFacebook", String.format("Error: %s", error.toString()));
+    private boolean validation() {
+        if (etEmail.getText().toString().isEmpty()) {
+            Utils.showToast(this, "Please input email address");
+            return false;
         }
 
-        @Override
-        public void onComplete(FacebookDialog.PendingCall pendingCall, Bundle data) {
-            Log.d("HelloFacebook", "Success!");
-        }
-    };
-
-
-
-    private interface LoginCallback {
-        public void onLoginFinished();
-    }
-
-    private class LoginLogic {
-
-        public LoginLogic() {
+        if (etFirstName.getText().toString().isEmpty()) {
+            Utils.showToast(this, "Please input first name");
+            return false;
         }
 
-        public void login(LoginCallback callback) {
-
+        if (etLastName.getText().toString().isEmpty()) {
+            Utils.showToast(this, "Please input last name");
+            return false;
         }
 
-        public void loginFacebook(LoginCallback callback) {
-
-        }
-
-        public void loginTwitter(LoginCallback callback) {
-
-        }
+        return true;
     }
 }

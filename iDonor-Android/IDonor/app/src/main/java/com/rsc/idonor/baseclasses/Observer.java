@@ -1,4 +1,4 @@
-package com.rsc.idonor.interfaces;
+package com.rsc.idonor.baseclasses;
 
 /**
  * Created by darkosmoljo on 22/11/14.

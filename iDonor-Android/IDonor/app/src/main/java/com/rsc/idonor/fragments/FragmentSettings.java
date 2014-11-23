@@ -86,6 +86,6 @@ public class FragmentSettings extends BasePreferenceFragment implements Preferen
 
     @Override
     public String getScreenTitle() {
-        return getActivity().getString(R.string.fragment_title_settings);
+        return "Settings";
     }
 }

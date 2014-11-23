@@ -10,7 +10,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <com.rsc.idonor.views.TextViewBold
+            android:id="@+id/btnEditProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:textSize="17dp"
+            android:textColor="@color/Blue"
+            android:text="@string/main_activity_edit_profile"/>
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/drop">
+            
+            <com.rsc.idonor.views.TextViewBoldItalic
+                android:id="@+id/tvBloodType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/White"
+                android:textSize="50dp"
+                android:text="0+"/>
+
+        </RelativeLayout>
 
     </RelativeLayout>
 
